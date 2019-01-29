@@ -6,30 +6,26 @@ public class QuickSort {
 		return sort(arr, 0, arr.length - 1);
 	}
 
-	private int[] sort(int[] arr, int left, int right) {
-		int[] result = arr;
-		if (left >= right) return result;
+	private int[] sort(int[] arr, int low, int high) {
 
-		int pivot = partition(result, left, right);
-		result = sort(result, left, pivot - 1);
-		result = sort(result, pivot, right);
-		return result;
+		if (low < high) {
+			int pivot = partition(arr, low, high);
+			sort(arr, low, pivot);
+			sort(arr, pivot + 1, high);
+		}
+		return arr;
 	}
 
-	private int partition(int[] arr, int left, int right) {
-		if (arr == null || left < 0) return -1;
-		int pivot = arr[right];
-		int end = left - 1;
-
-		for (int position = left; position < right; ++position) {
-			if (pivot > arr[position]) {
-				end += 1;
-				swap(arr, position, end);
-			}
+	private int partition(int[] arr, int low, int high) {
+		int pivot = arr[(low + high) / 2];
+		int i = low, j = high;
+		while (i <= j) {
+			while (arr[i] < pivot) i += 1;
+			while (arr[j] > pivot) j -= 1;
+			if (i < j) swap(arr, i, j);
+			else return j;
 		}
-		end += 1;
-		swap(arr, right, end);
-		return end;
+		return -1;
 	}
 
 	private void swap(int[] arr, int a, int b) {
