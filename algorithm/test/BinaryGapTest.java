@@ -54,26 +54,19 @@ public class BinaryGapTest {
 
 		public int solution(int N) {
 			int answer = 0;
-			boolean[] test = new boolean[N / 2];
-			for (int i = 0; N > 0; i++) {
-				if (N % 2 == 0) {
-					test[i] = true;
-				} else {
-					test[i] = false;
-				}
-				N = N / 2;
-			}
 			int zeroCount = 0;
 			int bouder = 0;
-			for (boolean index : test) {
-				if (index == false) {
+			for (; N > 0; ) {
+				if (N % 2 == 1) {
 					bouder += 1;
-					if (zeroCount >= answer) {
+					if (answer <= zeroCount) {
 						answer = zeroCount;
 						zeroCount = 0;
 					}
-				} else if (bouder >= 1 && index == true)
+				} else if (bouder > 0 && N % 2 == 0) {
 					zeroCount += 1;
+				}
+				N = N / 2;
 			}
 			return answer;
 		}
