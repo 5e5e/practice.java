@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="aws-java-sdk-1.11.496">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../external library/aws/aws-java-sdk-dynamodb-1.11.496.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../external library/aws/aws-java-sdk-1.11.497.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
