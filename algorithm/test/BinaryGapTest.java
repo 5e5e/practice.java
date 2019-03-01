@@ -51,19 +51,19 @@ public class BinaryGapTest {
 	}
 
 	@Test
-	// given N = 1041 the function should return 5.
+	// given N = 561892 the function should return 3.
 	public void testCase7() {
 		assertEquals(3, binaryGap.solution(561892));
 	}
 
 	@Test
-	// given N = 1041 the function should return 5.
+	// given N = 74901729 the function should return 4.
 	public void testCase8() {
 		assertEquals(4, binaryGap.solution(74901729));
 	}
 
 	@Test
-	// given N = 1041 the function should return 5.
+	// given N = 1376796946 the function should return 5.
 	public void testCase9() {
 		assertEquals(5, binaryGap.solution(1376796946));
 	}
@@ -73,15 +73,15 @@ public class BinaryGapTest {
 		public int solution(int N) {
 			int answer = 0;
 			int zeroCount = 0;
-			boolean bouder = false;
+			boolean bounder = false;
 			for (; N > 0; ) {
 				if (N % 2 == 1) {
-					bouder = true;
+					bounder = true;
 					if (answer <= zeroCount) {
 						answer = zeroCount;
 						zeroCount = 0;
 					} else zeroCount = 0;
-				} else if (bouder && N % 2 == 0) {
+				} else if (bounder && N % 2 == 0) {
 					zeroCount += 1;
 				}
 				N = N / 2;
