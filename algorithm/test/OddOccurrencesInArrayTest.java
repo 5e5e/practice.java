@@ -1,9 +1,12 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class OddOccurrencesInArrayTest {
+	private static final Logger logger = LoggerFactory.getLogger(OddOccurrencesInArrayTest.class);
 	private OddOccurrencesInArray oddOccurrencesInArray;
 
 	@BeforeEach
@@ -27,26 +30,15 @@ public class OddOccurrencesInArrayTest {
 
 		public int solution(int[] A) {
 			int answer = 0;
-			int bounder = 0;
-			for (int i = 0; i < A.length - 1; i += 2) {
-				if (bounder == 0) {
-					if (A[i] == A[i + 2]) {
-						bounder = A[i];
-						A[i] = 0;
+			for (int i = 0; i < A.length - 1; i++) {
+				if (A[i] != 0) {
+					for (int j = i + 1; j < A.length; j++) {
+						if (A[i] == A[j]) {
+							A[i] = 0;
+							A[j] = 0;
+							break;
+						}
 					}
-				} else {
-					if (bounder == A[i]) A[i] = 0;
-				}
-			}
-			bounder = 0;
-			for (int i = 1; i < A.length - 3; i += 2) {
-				if (bounder == 0) {
-					if (A[i] == A[i + 2]) {
-						bounder = A[i];
-						A[i] = 0;
-					}
-				} else {
-					if (bounder == A[i]) A[i] = 0;
 				}
 			}
 
@@ -54,6 +46,7 @@ public class OddOccurrencesInArrayTest {
 				if (index != 0) {
 					answer = index;
 					break;
+
 				}
 			}
 			return answer;
