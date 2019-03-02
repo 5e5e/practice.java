@@ -3,6 +3,9 @@ import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class OddOccurrencesInArrayTest {
@@ -30,24 +33,13 @@ public class OddOccurrencesInArrayTest {
 
 		public int solution(int[] A) {
 			int answer = 0;
-			for (int i = 0; i < A.length - 1; i++) {
-				if (A[i] != 0) {
-					for (int j = i + 1; j < A.length; j++) {
-						if (A[i] == A[j]) {
-							A[i] = 0;
-							A[j] = 0;
-							break;
-						}
-					}
-				}
+			Set<Integer> set = new HashSet<>();
+			for (int n = 0; n < A.length; n++) {
+				if (set.contains(A[n])) set.remove(A[n]);
+				else set.add(A[n]);
 			}
-
-			for (int index : A) {
-				if (index != 0) {
-					answer = index;
-					break;
-
-				}
+			for (Integer integer : set) {
+				answer = integer;
 			}
 			return answer;
 		}
