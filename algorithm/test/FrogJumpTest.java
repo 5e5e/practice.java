@@ -40,7 +40,7 @@ public class FrogJumpTest {
 	private class FromJump {
 		public int solution(int X, int Y, int D) {
 			int 몫 = (Y - X) / D;
-			int 나머지 = Y % D;
+			int 나머지 = (Y - X) % D;
 			if (나머지 == 0) {
 				return 몫;
 			}
