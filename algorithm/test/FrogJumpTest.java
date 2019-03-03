@@ -25,14 +25,26 @@ public class FrogJumpTest {
 
 	}
 
+	@Test
+	public void testCase3() {
+		assertEquals(142730189, fromJump.solution(3, 999111321, 7));
+
+	}
+
+	@Test
+	public void testCase4() {
+		assertEquals(2, fromJump.solution(1, 5, 2));
+
+	}
+
 	private class FromJump {
 		public int solution(int X, int Y, int D) {
-			int answer = 0;
-			while (X < Y) {
-				X += D;
-				answer += 1;
+			int 몫 = (Y - X) / D;
+			int 나머지 = Y % D;
+			if (나머지 == 0) {
+				return 몫;
 			}
-			return answer;
+			return 몫 + 1;
 		}
 	}
 }
