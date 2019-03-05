@@ -34,16 +34,13 @@ public class OddOccurrencesInArrayTest {
 	private class OddOccurrencesInArray {
 
 		public int solution(int[] A) {
-			int answer = 0;
 			Set<Integer> set = new HashSet<>();
 			for (int n = 0; n < A.length; n++) {
 				if (set.contains(A[n])) set.remove(A[n]);
 				else set.add(A[n]);
 			}
-			for (Integer integer : set) {
-				answer = integer;
-			}
-			return answer;
+
+			return set.iterator().next();
 		}
 	}
 }

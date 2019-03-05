@@ -19,6 +19,22 @@ public class PermMissingElemTest {
 		assertEquals(4, permMissingElem.solution(new int[]{2, 3, 1, 5}));
 	}
 
+	@Test
+	public void testCase2() {
+		assertEquals(1, permMissingElem.solution(new int[]{}));
+	}
+
+	@Test
+	public void testCase3() {
+		assertEquals(2, permMissingElem.solution(new int[]{1}));
+	}
+
+	@Test
+	public void testCase4() {
+		assertEquals(3, permMissingElem.solution(new int[]{1, 2}));
+	}
+
+
 	@BeforeEach
 	public void setup() {
 		permMissingElem = new PermMissingElem();
@@ -26,12 +42,14 @@ public class PermMissingElemTest {
 
 	private class PermMissingElem {
 		public int solution(int[] A) {
+
 			Set<Integer> set = new HashSet<>();
-			for (int i = 0; i < A.length; i++) {
+			for (int i = 0; i <= A.length; i++) {
 				set.add(i + 1);
+				logger.debug("i +1 : " + (i + 1));
 			}
 			for (int i = 0; i < A.length; i++) {
-				if (set.contains(A[i])) set.remove(A[i]);
+				set.remove(A[i]);
 			}
 			return set.iterator().next();
 		}
