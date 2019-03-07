@@ -18,41 +18,79 @@ public class TapeEquilibriumTest {
 
 	@Test
 	public void testCase1() {
+		int[] A = new int[]{3, 1, 2, 5, 4};
+		quickSort(A, 0, 4);
+		for (int i : A) {
+			logger.debug(i + "");
+		}
 		assertEquals(1, tapeEquilibrium.solution(new int[]{3, 1, 2, 4, 3}));
 	}
 
+	private void quickSort(int[] A, int low, int high) {
+		if (low < high) {
+			int p = partition(A, low, high);
+			logger.debug("p : " + p);
+			quickSort(A, low, p);
+			quickSort(A, p + 1, high);
+		}
+	}
+
+	private int partition(int[] a, int low, int high) {
+		int pivot = a[(low + high) / 2];
+		int i = low - 1;
+		int j = high + 1;
+		while (true) {
+			logger.debug("pivot : " + pivot);
+			i += 1;
+			while (a[i] < pivot) i += 1;
+			logger.debug("a[i] : " + a[i]);
+			j -= 1;
+			while ( a[j] > pivot) j -= 1;
+			logger.debug("a[j] : " + a[j]);
+			if (i >= j) return j;
+			int temp = a[i];
+			a[i] = a[j];
+			a[j] = temp;
+		}
+	}
+
 	private class TapeEquilibrium {
-		// A = 배열 N = 배열의 길이 P =
+		// A = 배열 N = 배열의 길이 P = 0< p<N
 		public int solution(int[] A) {
-			int answer = 0;
-			int result = 0;
+			int answer = quickSum(A, 0, A.length-1);
+			int count = 0;
 			int N = A.length;
 			int P = 1;
-			for (; P < N; P++) {
-				result = sum(firstPartCal(A, 0, P - 1), secondPartCal(A, P, N - 1));
-				if (result <= answer || answer == 0) answer = result;
+			while (P < N) {
+				int leftResult = 0;
+				int rightResult = 0;
+				int finalResult = 0;
+				for (int i = 0; i <= P - 1; i++) {
+					leftResult += A[i];
+				}
+				for (int i = P; i < N; i++) {
+					rightResult += A[i];
+				}
+				finalResult = absolute(leftResult, -rightResult);
+				if (count == 0 || answer >= finalResult) {
+					answer = finalResult;
+				}
+				count += 1;
+				P += 1;
 			}
 			return answer;
 		}
 
-		private int sum(int firstValue, int secondValue) {
-			return (firstValue - secondValue) < 0 ? -(firstValue - secondValue) : (firstValue - secondValue);
+		private int quickSum(int[] a, int low, int high) {
+			int p = 0;
+			if (low < high) {
+				
+			}
+			return p =;
 		}
 
-		private int secondPartCal(int[] A, int start, int end) {
-			int temp = 0;
-			for (; start <= end; start++) {
-				temp += A[start];
-			}
-			return temp;
-		}
-
-		private int firstPartCal(int[] A, int start, int end) {
-			int temp = 0;
-			for (; start <= end; start++) {
-				temp += A[start];
-			}
-			return temp;
+		private int absolute(int leftResult, int rightResult) {
+			return (leftResult + rightResult) < 0 ? -(leftResult + rightResult) : (leftResult + rightResult);
 		}
 	}
 }
