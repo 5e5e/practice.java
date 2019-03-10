@@ -26,21 +26,19 @@ public class MaxCountersTest {
 		public int[] solution(int N, int[] A) {
 			int[] answers = new int[N];
 			int maxCounter = 0;
-			for(int i=0; i<A.length; i++) {
-				if (A[i] >= 1 && A[i] <= N) {
-					// increase X(A[i]) = answert[X] +1;
-					answers[A[i] - 1] += 1;
-					if (maxCounter < answers[A[i] - 1]) {
-						maxCounter = answers[A[i] - 1];
-
-					}
-				} else if (A[i] == N + 1) {
-					for (int j = 0; j < answers.length; j++) {
-						answers[j] = maxCounter;
-					}
-				}
+			int temp = 0;
+			for (int i : A) {
+				if (1 <= i && i <= N) {
+					if (answers[i - 1] < maxCounter) answers[i - 1] = maxCounter + 1;
+					else answers[i - 1] += 1;
+					if (temp < answers[i - 1]) temp = answers[i - 1];
+				} else
+					maxCounter = temp;
 			}
 
+			for (int i = 0; i < answers.length; i++) {
+				if (answers[i] < maxCounter) answers[i] = maxCounter;
+			}
 			return answers;
 		}
 	}
