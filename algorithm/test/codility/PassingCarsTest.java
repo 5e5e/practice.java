@@ -5,9 +5,6 @@ import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PassingCarsTest {
@@ -24,31 +21,18 @@ public class PassingCarsTest {
 		assertEquals(5, passingCars.solution(new int[]{0, 1, 0, 1, 1}));
 	}
 
-	@Test
-	void testCase2() {
-		assertEquals(-1, passingCars.solution(new int[]{}));
-	}
-
 	private class PassingCars {
 		public int solution(int[] A) {
-			if (A.length == 0) {
-				return -1;
-			}
-			int answer = 0;
 
-			List<Integer> P = new ArrayList();
-			List<Integer> Q = new ArrayList();
+			int answer = 0;
+			int zero = 0;
+
 			for (int i = 0; i < A.length; i++) {
-				if (A[i] == 0)
-					P.add(i);
-				else
-					Q.add(i);
+				if (A[i] == 0) zero += 1;
+				else answer += zero;
 			}
-			for (Integer q : Q) {
-				for (Integer p : P) {
-					if ((q - p) > 0) answer += 1;
-				}
-			}
+
+			if (answer > 1000000000 || answer < 0) return -1;
 			return answer;
 		}
 	}
