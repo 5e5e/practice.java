@@ -39,7 +39,6 @@ public class GenomicRangeQueryTest {
 				}
 				answer[i] = diff;
 			}
-
 			return answer;
 		}
 	}
