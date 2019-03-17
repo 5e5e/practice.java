@@ -175,3 +175,6 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/java,linux,macos,windows,intellij
+
+# local folder
+알고리즘 시험들/
