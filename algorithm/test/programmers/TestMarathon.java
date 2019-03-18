@@ -5,8 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -38,16 +37,14 @@ public class TestMarathon {
 
 	private class Marathon {
 		public String solution(String[] participant, String[] completion) {
-			Map<Integer, String> marathoner = new HashMap<>();
-			for (int i = 0; i < participant.length; i++) {
-				marathoner.put(i, participant[i]);
-			}
+			// 첫번째
+			Arrays.sort(participant);
+			Arrays.sort(completion);
 			for (int i = 0; i < completion.length; i++) {
-				if (marathoner.containsValue(completion[i])) {
-					marathoner.values().remove(completion[i]);
-				}
+				if (!participant[i].equals(completion[i])) return participant[i];
 			}
-			return marathoner.values().iterator().next();
+			return participant[participant.length - 1];
+			// 두번째
 		}
 	}
 }
