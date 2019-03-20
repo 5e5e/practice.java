@@ -23,21 +23,22 @@ public class MinAvgTwoSliceTest {
 
 	private class MinAvgTwoSlice {
 		public int solution(int[] A) {
-			int answer = Integer.MAX_VALUE;
-			for (int p = 0; p < A.length; p++) {
-				int average = A[p];
-				for (int q = p + 1; q < A.length; q++) {
-					logger.debug("average : " + average);
-					average = (average + A[q]) / 2;
-					answer = Math.min(answer, average);
-					logger.debug("answer : " + answer);
+			int answer = 0;
+			double avg = (A[0] + A[1]) / 2;
+			for (int i = 2; i < A.length; i++) {
+				double temp2 = (A[i - 2] + A[i - 1] + A[i]) / 3.0;
+				if (temp2 < avg) {
+					avg = temp2;
+					answer = i - 2;
+				}
+
+				temp2 = (A[i - 1] + A[i]) / 2.0;
+				if (temp2 < avg) {
+					avg = temp2;
+					answer = i - 1;
 				}
 			}
 			return answer;
-		}
-
-		private int average(int p, int q, int average) {
-			return average += ((p + q) / 2);
 		}
 	}
 }
