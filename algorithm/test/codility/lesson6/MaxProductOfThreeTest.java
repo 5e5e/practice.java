@@ -25,7 +25,9 @@ public class MaxProductOfThreeTest {
 		public int solution(int[] A) {
 			quickSort(A, 0, A.length - 1);
 			int index = A.length - 1;
-			return A[index] * A[index - 1] * A[index - 2];
+			int result1 = A[index] * A[index - 1] * A[index - 2];
+			int result2 = A[0] * A[1] * A[index];
+			return result1 > result2 ? result1 : result2;
 		}
 
 		private void quickSort(int[] A, int low, int high) {
