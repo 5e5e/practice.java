@@ -1,4 +1,4 @@
-package codility;
+package codility.lesson4;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
