@@ -1,3 +1,5 @@
+package interfacePractice.Chicks;
+
 public interface IState {
 	public static final int state_ready = 0;
 	public static final int state_finish = 1;

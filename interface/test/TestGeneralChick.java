@@ -1,4 +1,4 @@
-import Chicks.GeneralChick;
+import interfacePractice.Chicks.GeneralChick;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;

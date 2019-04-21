@@ -1,3 +1,5 @@
+package interfacePractice.Chicks;
+
 import java.awt.*;
 
 public class MyFrame extends Frame {

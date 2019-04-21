@@ -1,4 +1,4 @@
-package Chicks;
+package interfacePractice.Chicks;
 
 import java.awt.*;
 
