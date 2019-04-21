@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf9f8b2b-24c5-4d6d-8ba1-1ff9cc20fc8f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interface.iml" beforeDir="false" afterPath="$PROJECT_DIR$/interface.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ChickManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfacePractice/Chicks/ChickManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Chicks/BlueChick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfacePractice/Chicks/BlueChick.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Chicks/Chick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfacePractice/Chicks/Chick.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Chicks/Flyable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfacePractice/Chicks/Flyable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Chicks/GeneralChick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfacePractice/Chicks/GeneralChick.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Chicks/GreenChick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfacePractice/Chicks/GreenChick.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Chicks/Ppickable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfacePractice/Chicks/Ppickable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Chicks/RedChick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfacePractice/Chicks/RedChick.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfacePractice/Chicks/IState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InitGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfacePractice/Chicks/InitGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfacePractice/Chicks/MyFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/TestGeneralChick.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestGeneralChick.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,10 +16,16 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="14">
-              <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="27" selection-end-column="53" />
+            <state relative-caret-position="220">
+              <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#604#605#0" expanded="true" />
+                <element signature="e#658#659#0" expanded="true" />
+                <element signature="e#449#450#0" expanded="true" />
+                <element signature="e#468#469#0" expanded="true" />
+                <element signature="e#486#487#0" expanded="true" />
+                <element signature="e#506#507#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -42,8 +34,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/genericPractice/NonGenericDemo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="6" column="87" selection-start-line="6" selection-start-column="87" selection-end-line="28" selection-end-column="5" />
+            <state relative-caret-position="54">
+              <caret line="7" column="26" selection-start-line="7" selection-end-line="8" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#468#469#0" expanded="true" />
@@ -171,8 +163,8 @@
         <option value="$PROJECT_DIR$/src/MyFunctionalInterface.java" />
         <option value="$PROJECT_DIR$/src/MyFunctionalInterfaceWithParam.java" />
         <option value="$PROJECT_DIR$/src/MyFunctionalInterfaceForNew.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/genericPractice/NonGenericDemo.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
       </list>
     </option>
   </component>
@@ -199,6 +191,12 @@
               <item name="interface" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="interface" type="b2602c69:ProjectViewProjectNode" />
+              <item name="interface" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="genericPractice" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -210,7 +208,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555852980989" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555853535379" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -279,7 +277,7 @@
       <updated>1555675514235</updated>
       <workItem from="1555675517758" duration="4438000" />
       <workItem from="1555681841554" duration="22000" />
-      <workItem from="1555777092023" duration="4305000" />
+      <workItem from="1555777092023" duration="5014000" />
     </task>
     <servers />
   </component>
@@ -289,13 +287,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8765000" />
+    <option name="totallyTimeSpent" value="9474000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="929" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25579977" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25579977" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -304,7 +302,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3297491" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3297491" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -501,8 +499,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/genericPractice/NonGenericDemo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="87" selection-start-line="6" selection-start-column="87" selection-end-line="28" selection-end-column="5" />
+        <state relative-caret-position="54">
+          <caret line="7" column="26" selection-start-line="7" selection-end-line="8" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#468#469#0" expanded="true" />
@@ -517,10 +515,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14">
-          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="27" selection-end-column="53" />
+        <state relative-caret-position="220">
+          <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#604#605#0" expanded="true" />
+            <element signature="e#658#659#0" expanded="true" />
+            <element signature="e#449#450#0" expanded="true" />
+            <element signature="e#468#469#0" expanded="true" />
+            <element signature="e#486#487#0" expanded="true" />
+            <element signature="e#506#507#0" expanded="true" />
           </folding>
         </state>
       </provider>
