@@ -6,17 +6,24 @@ import org.slf4j.LoggerFactory;
 import java.util.Random;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class Main {
 	private static final Logger logger = LoggerFactory.getLogger(Main.class);
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args)  {
 		// write your code here
+		ExecutorService executor = Executors.newFixedThreadPool(5);
 		final BlockingQueue<Integer> queue = new ArrayBlockingQueue<Integer>(100);
 		final Random random = new Random();
 
 		for (int i = 0; i < 100; i++) {
-			queue.put(i);
+			try {
+				queue.put(i);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 		}
 
 		Runnable worker = () -> {
@@ -31,7 +38,12 @@ public class Main {
 		};
 
 		for (int i = 0; i < 100; i++) {
-			new Thread(worker).start();
+			executor.execute(worker);
+		}
+
+		executor.shutdown();
+		while(!executor.isShutdown()) {
+
 		}
 	}
 }
