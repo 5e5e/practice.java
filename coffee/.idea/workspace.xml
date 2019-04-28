@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8454a187-5bb0-40bc-9c6d-9f9d4e196eee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../mart/src/Instance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../interface/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../interface/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thread/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../thread/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thread/src/com/practices/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../thread/src/com/practices/Main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -337,7 +337,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="929" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25274727" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />

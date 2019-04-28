@@ -3,29 +3,35 @@ package com.practices;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.Random;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
+
 public class Main {
 	private static final Logger logger = LoggerFactory.getLogger(Main.class);
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		// write your code here
-		Incrementer incrementer = new Incrementer();
-		Thread thread1 = new Thread(() -> {
-			incrementer.increment();
-		});
+		final BlockingQueue<Integer> queue = new ArrayBlockingQueue<Integer>(100);
+		final Random random = new Random();
 
-		Thread thread2 = new Thread(() -> {
-			incrementer.increment();
-		});
-
-		thread1.start();
-		thread2.start();
-
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			throw new RuntimeException(e);
+		for (int i = 0; i < 100; i++) {
+			queue.put(i);
 		}
 
-		logger.debug("result :" + incrementer.getData());
+		Runnable worker = () -> {
+			Integer intNum = null;
+			try {
+				intNum = queue.take();
+				Thread.sleep(random.nextInt(1000));
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			logger.debug("intNum : " + intNum.toString());
+		};
+
+		for (int i = 0; i < 100; i++) {
+			new Thread(worker).start();
+		}
 	}
 }
