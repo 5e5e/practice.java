@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="junit-jupiter">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../external library/junit-jupiter" />
+      <root url="file://$PROJECT_DIR$/../../external library/logback" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/../../external library/junit-jupiter" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../../external library/logback" recursive="false" />
+  </library>
+</component>
