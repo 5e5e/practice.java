@@ -3,47 +3,50 @@ package com.practices;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.List;
 import java.util.Random;
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 public class Main {
 	private static final Logger logger = LoggerFactory.getLogger(Main.class);
+	private Random mRandom = new Random();
 
-	public static void main(String[] args)  {
-		// write your code here
-		ExecutorService executor = Executors.newFixedThreadPool(5);
-		final BlockingQueue<Integer> queue = new ArrayBlockingQueue<Integer>(100);
-		final Random random = new Random();
-
-		for (int i = 0; i < 100; i++) {
-			try {
-				queue.put(i);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
-
-		Runnable worker = () -> {
-			Integer intNum = null;
-			try {
-				intNum = queue.take();
-				Thread.sleep(random.nextInt(1000));
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-			logger.debug("intNum : " + intNum.toString());
+	public static void main(String[] args) {
+		Runnable runnable = () -> {
+			new Main().firstMethod();
 		};
 
-		for (int i = 0; i < 100; i++) {
-			executor.execute(worker);
-		}
+		Thread thread1 = new Thread(runnable);
+		Thread thread2 = new Thread(runnable);
 
-		executor.shutdown();
-		while(!executor.isShutdown()) {
+		thread1.start();
+		thread2.start();
+	}
 
-		}
+	private void firstMethod() {
+		int rNum = mRandom.nextInt(10);
+		repeat(rNum);
+		secondMethod();
+
+		List<Integer> intList = ThreadLocalUtil.getIntList();
+		logger.debug(Thread.currentThread().getName() + " " + intList.toString());
+		List<String> strList = ThreadLocalUtil.getStrList();
+		logger.debug(Thread.currentThread().getName() + " " + strList.toString());
+	}
+
+	private void repeat(int rNum) {
+		logger.debug(Thread.currentThread().getName() + " " + rNum);
+		ThreadLocalUtil.addInt(rNum);
+		ThreadLocalUtil.addStr(rNum + "Str");
+	}
+
+	private void secondMethod() {
+		int rNum = mRandom.nextInt(10);
+		repeat(rNum);
+		thirdMethod();
+	}
+
+	private void thirdMethod() {
+		int rNum = mRandom.nextInt(10);
+		repeat(rNum);
 	}
 }
